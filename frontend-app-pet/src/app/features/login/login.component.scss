@@ -1,0 +1,88 @@
+.login-container {
+  display: flex;
+  height: 100vh;
+
+  .login-left {
+    background-color: #ff6b57; // Color de fondo del lado izquierdo
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+      width: 150px; // Ajusta el tamaño de acuerdo a tus necesidades
+    }
+  }
+
+  .login-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+
+      .form-control {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+    }
+
+    .form-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+
+      .forgot-password {
+        font-size: 0.875rem;
+        color: #888;
+        text-decoration: none;
+      }
+    }
+
+    .btn-login {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #4b99f6; // Color del botón de inicio de sesión
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #357ae8;
+      }
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+
+    .register-link {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: #888;
+
+      .register {
+        color: #4b99f6;
+        text-decoration: none;
+      }
+    }
+  }
+}

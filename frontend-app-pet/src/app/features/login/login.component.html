@@ -1,0 +1,23 @@
+<div class="login-container">
+  <div class="login-left">
+    <img src="../../../assets/logo.png" alt="Logo" class="logo" />
+  </div>
+  <div class="login-right">
+    <h2 class="title">BIENVENIDO</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input type="email" formControlName="email" placeholder="EMAIL" class="form-control" />
+      </div>
+      <div class="form-group">
+        <input type="password" formControlName="password" placeholder="CONTRASEÑA" class="form-control" />
+      </div>
+      <div class="form-footer">
+        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+      </div>
+      <button type="submit" class="btn-login" [disabled]="loginForm.invalid">INICIAR SESIÓN</button>
+      <p class="register-link">
+        AÚN NO TENGO CUENTA. <a href="#" class="register">REGISTRARSE</a>
+      </p>
+    </form>
+  </div>
+</div>
