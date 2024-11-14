@@ -8,6 +8,7 @@ import { authReducer } from './store/auth/reducers/auth.reducer';
 import { AuthEffects } from './store/auth/effects/auth.effects';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
+import { HomeModule } from './features/home/home.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
     StoreModule.forRoot({ auth: authReducer }),
     EffectsModule.forRoot([AuthEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule
   ],
   bootstrap: []
 })

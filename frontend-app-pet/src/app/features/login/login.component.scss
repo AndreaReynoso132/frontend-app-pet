@@ -1,88 +1,147 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .login-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   height: 100vh;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
 
-  .login-left {
-    background-color: #ff6b57; // Color de fondo del lado izquierdo
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.login-left {
+  position: absolute;
+  background: url('../../../assets/1.svg') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
 
-    .logo {
-      width: 150px; // Ajusta el tamaño de acuerdo a tus necesidades
-    }
-  }
+.logo-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 15%; 
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; 
+}
 
-  .login-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
+.logo {
+  width: 370px;
+}
 
-    .title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #333;
-      margin-bottom: 1.5rem;
-    }
+.login-right {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 780px; 
+  z-index: 3;
+  width: 50%; 
+  margin-left: 10%; 
+}
 
-    .form-group {
-      margin-bottom: 1rem;
+.title {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-left: 4px solid #ff6347;
+  padding-left: 10px;
+  margin-top: 0;
+}
 
-      .form-control {
-        width: 100%;
-        padding: 0.5rem;
-        font-size: 1rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-      }
-    }
+form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-    .form-footer {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 1rem;
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
 
-      .forgot-password {
-        font-size: 0.875rem;
-        color: #888;
-        text-decoration: none;
-      }
-    }
+.form-control {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    .btn-login {
-      width: 100%;
-      padding: 0.75rem;
-      font-size: 1rem;
-      color: #fff;
-      background-color: #4b99f6; // Color del botón de inicio de sesión
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s;
+.form-footer {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 20px;
+}
 
-      &:hover {
-        background-color: #357ae8;
-      }
+.forgot-password {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+}
 
-      &:disabled {
-        background-color: #ccc;
-        cursor: not-allowed;
-      }
-    }
+.forgot-password:hover {
+  text-decoration: underline;
+}
 
-    .register-link {
-      margin-top: 1rem;
-      font-size: 0.875rem;
-      color: #888;
+.btn-login {
+  width: auto;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+  display: block; 
+  margin: 0 auto; 
+}
 
-      .register {
-        color: #4b99f6;
-        text-decoration: none;
-      }
-    }
-  }
+.btn-login:hover {
+  background-color: #0056b3;
+}
+
+.btn-login:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.register-link {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.register {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register:hover {
+  text-decoration: underline;
 }
