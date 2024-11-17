@@ -8,29 +8,29 @@
 
   header {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 40px;
+    left: 50px;
     display: flex;
     align-items: center;
-    width: 100%;
+    width: calc(100% - 100px);
+    padding-right: 50px;
 
     .logo {
       img {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
       }
     }
 
     nav {
       margin-left: auto;
-      margin-right: 20px;
 
       a {
         color: white;
         margin: 0 15px;
         text-decoration: none;
         font-weight: bold;
-        font-size: 1rem;
+        font-size: 20px;
 
         &:hover {
           text-decoration: underline;
@@ -41,17 +41,20 @@
 
   .content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     max-width: 1200px;
     margin: auto;
-    padding: 20px;
+    padding: 0 50px;
 
     .intro-text {
-      max-width: 50%;
+      max-width: 600px;
+      margin-top: 80px;
+      margin-left: 50px;
 
       h1 {
+        font-family: 'Poppins', sans-serif;
         color: white;
         font-size: 3rem;
         font-weight: bold;
@@ -59,6 +62,7 @@
       }
 
       p {
+        font-family: 'Poppins', sans-serif;
         margin: 20px 0;
         color: white;
         font-size: 1.2rem;
@@ -67,6 +71,7 @@
 
       button {
         padding: 15px 30px;
+        font-family: 'Poppins', sans-serif;
         font-size: 1.1rem;
         color: white;
         background-color: #007bff;
@@ -81,6 +86,7 @@
       }
 
       .contact-text {
+        font-family: 'Poppins', sans-serif;
         margin-top: 15px;
         color: white;
         font-size: 1rem;
@@ -88,12 +94,11 @@
     }
 
     .pet-image {
-      position: relative; 
+      position: relative;
       width: 400px;
       height: 400px;
       overflow: visible;
-      
-     
+
       &::after {
         content: '';
         position: absolute;
@@ -104,15 +109,31 @@
         height: 350px;
         border-radius: 50%;
         background-color: #ffd700;
-        z-index: -1; 
+        z-index: -1;
       }
-    
+
       img {
         position: relative;
-        top: 50px; 
+        top: 50px;
         width: 100%;
         height: auto;
       }
     }
-  }    
+
+    .img-azul {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 300px;
+      height: auto;
+
+      // img {
+      //   position: relative;
+      //   top: 200px;
+      //   width: 50%;
+      //   height: auto;
+      //   padding-left: 100px;
+      // }
+    }
+  }
 }

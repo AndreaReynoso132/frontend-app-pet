@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
+import { NotFoundComponent } from './features/not-found/not-found.component'; // Importa el componente 404
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' }, 
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'home',
     component: HomeComponent,
-    data: { text: 'We Get Pet Care!' } 
+    data: { text: 'We Get Pet Care!' },
   },
   {
     path: 'location',
@@ -44,7 +45,7 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./features/login/login.module').then((m) => m.LoginModule),
   },
-  { path: '**', redirectTo: 'home' },
+  { path: '**', component: NotFoundComponent }, 
 ];
 
 @NgModule({
