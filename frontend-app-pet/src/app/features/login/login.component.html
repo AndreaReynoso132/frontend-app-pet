@@ -7,16 +7,57 @@
   <div class="login-right">
     <h2 class="title">BIENVENIDO</h2>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <!-- Campo de email -->
       <div class="form-group">
-        <input type="email" formControlName="email" placeholder="EMAIL" class="form-control" />
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="EMAIL"
+          class="form-control"
+        />
+        <!-- Mensajes de error para email -->
+        <div
+          *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+          class="error-message"
+        >
+          <p *ngIf="loginForm.get('email')?.errors?.['required']">
+            El email es obligatorio.
+          </p>
+          <p *ngIf="loginForm.get('email')?.errors?.['email']">
+            Introduce un email válido.
+          </p>
+        </div>
       </div>
+
+      <!-- Campo de contraseña -->
       <div class="form-group">
-        <input type="password" formControlName="password" placeholder="CONTRASEÑA" class="form-control" />
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="CONTRASEÑA"
+          class="form-control"
+        />
+        <!-- Mensajes de error para contraseña -->
+        <div
+          *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+          class="error-message"
+        >
+          <p *ngIf="loginForm.get('password')?.errors?.['required']">
+            La contraseña es obligatoria.
+          </p>
+        </div>
       </div>
+
       <div class="form-footer">
         <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
       </div>
-      <button type="submit" class="btn-login" [disabled]="loginForm.invalid">INICIAR SESIÓN</button>
+      <button
+        type="submit"
+        class="btn-login"
+        [disabled]="loginForm.invalid"
+      >
+        INICIAR SESIÓN
+      </button>
       <p class="register-link">
         AÚN NO TENGO CUENTA. <a href="#" class="register">REGISTRARSE</a>
       </p>

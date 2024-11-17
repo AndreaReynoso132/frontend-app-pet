@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +7,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public displayText: string = '';
-
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  public displayText: string = ''; 
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    // Escucha los cambios de datos en la ruta para actualizar el texto mostrado
-    this.route.data.subscribe(data => {
+    
+      this.route.data.subscribe(data => {
       this.displayText = data['text'];
     });
   }

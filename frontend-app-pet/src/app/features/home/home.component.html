@@ -1,6 +1,9 @@
 <div class="home-container">
-  <!-- Menú de navegación -->
+  <!-- Header con logo y navegación -->
   <header>
+    <div class="logo">
+      <img src="../../../assets/logo.png" alt="Logo">
+    </div>
     <nav>
       <a routerLink="/location">Location</a>
       <a routerLink="/blog">Blog</a>
@@ -10,11 +13,16 @@
     </nav>
   </header>
 
+  <!-- Sección principal -->
   <section class="content">
     <div class="intro-text">
       <h1>{{ displayText }}</h1>
-      <p>For over 17 years, Fetch! Pet Care has been a trusted partner in keeping pets healthy and happy!</p>
+      <p>
+        For over 17 years, Fetch! Pet Care has been a trusted partner in keeping
+        pets healthy and happy!
+      </p>
       <button>Schedule Service</button>
+      <p class="contact-text">Or Call 866.338.2463</p>
     </div>
     <div class="pet-image">
       <img src="../../../assets/perrito.png" alt="Perrito">

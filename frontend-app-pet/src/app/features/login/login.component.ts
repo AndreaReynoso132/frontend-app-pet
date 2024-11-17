@@ -12,15 +12,19 @@ export class LoginComponent {
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder, private store: Store) {
+    // Definir validaciones para los campos
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]], // Email requerido y válido
+      password: ['', Validators.required] // Contraseña requerida
     });
   }
 
+  // Método que se ejecuta al enviar el formulario
   onSubmit() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
+
+      // Despachar la acción de inicio de sesión
       this.store.dispatch(AuthActions.login({ email, password }));
     }
   }
